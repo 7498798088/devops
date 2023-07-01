@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+      name:myapps-deployment
+spec:
+    replicas: 3
+    selector:
+       matchLabels:
+       app: myapp
+    template:
+       metadata:
+       labels:
+          app: mypp
+       spec:
+           containers:
+           - name: myapp-container
+             image: redmine
+             ports:
+                - containerPort:8080
